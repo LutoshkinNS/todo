@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.colors.fontSecondary};
   background: ${({ theme }) => theme.colors.secondary};
   border-radius: 50%;
+  cursor: pointer;
 
   &:hover {
     background: ${({ theme }) => theme.colors.secondaryHover};
