@@ -31,11 +31,10 @@ export const TasksAll = memo((props: TasksAllProps) => {
   if (checkboxAllRef) {
     return (
       <Checkbox
+        data-testid="tasksAll"
         ref={checkboxAllRef}
         id="checkboxAll"
-        onChange={(e) => {
-          onChange(e);
-        }}
+        onChange={onChange}
         label={`Completed ${countCheckedTasks} of ${countAllTasks}`}
       />
     );

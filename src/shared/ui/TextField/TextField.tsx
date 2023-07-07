@@ -7,11 +7,17 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const TextField = memo((props: TextFieldProps) => {
-  const { id, value, onChange, label } = props;
+  const { id, value, onChange, label, ...otherProps } = props;
 
   return (
     <S.Wrapper>
-      <S.Input type="text" id={id} value={value} onChange={onChange} />
+      <S.Input
+        type="text"
+        id={id}
+        value={value}
+        onChange={onChange}
+        {...otherProps}
+      />
       <Label htmlFor={String(id)}>{label}</Label>
     </S.Wrapper>
   );

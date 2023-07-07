@@ -8,5 +8,5 @@ interface TaskItemProps {
 export const TaskList = memo((props: TaskItemProps) => {
   const { children } = props;
 
-  return <S.List>{children}</S.List>;
+  return <S.List data-testid="TaskList">{children}</S.List>;
 });

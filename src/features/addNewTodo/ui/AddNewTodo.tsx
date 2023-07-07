@@ -32,9 +32,10 @@ export const AddNewTodo = memo((props: AddNewTodoProps) => {
   }, []);
 
   return (
-    <S.Form onSubmit={onSubmit} autoComplete="off">
+    <S.Form onSubmit={onSubmit} autoComplete="off" data-testid="addTaskForm">
       <S.Row>
         <TextField
+          data-testid="addTaskInput"
           name="newTask"
           id="textTask"
           onChange={handleChangeText}
@@ -43,7 +44,9 @@ export const AddNewTodo = memo((props: AddNewTodoProps) => {
         />
       </S.Row>
       <S.Row>
-        <Button type="submit">Add</Button>
+        <Button type="submit" data-testid="addTaskButton">
+          Add
+        </Button>
       </S.Row>
     </S.Form>
   );

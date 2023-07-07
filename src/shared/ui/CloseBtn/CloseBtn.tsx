@@ -6,7 +6,11 @@ interface CloseBtnProps {
 }
 
 export const CloseBtn = memo((props: CloseBtnProps) => {
-  const { onClick } = props;
+  const { onClick, ...otherProps } = props;
 
-  return <S.Wrapper onClick={onClick}>x</S.Wrapper>;
+  return (
+    <S.Wrapper onClick={onClick} data-testid="CloseBtn" {...otherProps}>
+      x
+    </S.Wrapper>
+  );
 });

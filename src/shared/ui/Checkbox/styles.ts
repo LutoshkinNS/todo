@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Checkbox = styled.div`
   position: relative;
   padding-left: 20px;
+  display: flex;
+  flex-wrap: nowrap;
 
   input:checked ~ label div {
     background: ${({ theme }) => theme.colors.secondary};

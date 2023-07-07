@@ -8,7 +8,7 @@ interface ContainerProps {
 export const Container = memo((props: ContainerProps) => {
   const { children } = props;
 
-  return <StyledContainer>{children}</StyledContainer>;
+  return <StyledContainer data-testid="container">{children}</StyledContainer>;
 });
 
 const StyledContainer = styled.div`

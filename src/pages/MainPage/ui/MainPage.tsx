@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useCallback } from "react";
-import { memo } from "react";
 import { Task, TaskItem } from "../../../entities/task";
 import { AddNewTodo } from "../../../features/addNewTodo";
 import { TasksAll } from "../../../entities/tasksAll";
@@ -14,7 +13,7 @@ import * as S from "./styles";
 import { Title } from "../../../shared/ui/Title";
 import { TaskList } from "../../../entities/task";
 
-export const MainPage = memo(() => {
+export const MainPage = () => {
   const [state, setState] = React.useState(get());
 
   const handleChangeTaskItem = useCallback((task: Task) => {
@@ -39,10 +38,13 @@ export const MainPage = memo(() => {
 
   return (
     <Container>
-      <S.MainPage>
-        <Title align="left">Fixed todo list</Title>
+      <S.MainPage data-testid="mainPage">
+        <Title align="left" data-testid="mainPageTitle">
+          Fixed todo list
+        </Title>
         <AddNewTodo addTask={addTask} />
         <TasksAll
+          data-testid="mainPageTasksAll"
           onChange={handleChangeTaskAll}
           countAllTasks={state.length}
           countCheckedTasks={countCompletedTasks(state)}
@@ -62,4 +64,4 @@ export const MainPage = memo(() => {
       </S.MainPage>
     </Container>
   );
-});
+};

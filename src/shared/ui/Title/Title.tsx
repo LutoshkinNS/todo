@@ -12,12 +12,18 @@ interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 export const Title = memo((props: TitleProps) => {
-  const { tag = "h1", children, isUppercase = false, align = "left" } = props;
+  const {
+    tag = "h1",
+    children,
+    isUppercase = false,
+    align = "left",
+    ...otherProps
+  } = props;
 
   const Tag = S.Title.withComponent(tag);
 
   return (
-    <Tag isUppercase={isUppercase} align={align}>
+    <Tag isUppercase={isUppercase} align={align} {...otherProps}>
       {children}
     </Tag>
   );

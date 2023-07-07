@@ -17,14 +17,19 @@ export const TaskItem = memo((props: TaskItemProps) => {
   const handleRemove = useCallback(() => onRemove(task), [onRemove, task]);
 
   return (
-    <S.ListItem>
-      <Checkbox
-        id={String(task.id)}
-        onChange={handleChange}
-        checked={task.completed}
-        label={task.item}
-      />
-      <CloseBtn onClick={handleRemove} />
+    <S.ListItem data-testid="TaskItem">
+      <S.ContentWrapper>
+        <Checkbox
+          data-testid="itemCheckbox"
+          id={String(task.id)}
+          onChange={handleChange}
+          checked={task.completed}
+          label={task.item}
+        />
+      </S.ContentWrapper>
+      <S.Close>
+        <CloseBtn onClick={handleRemove} />
+      </S.Close>
     </S.ListItem>
   );
 });

@@ -5,4 +5,7 @@ export const Label = styled.label`
   line-height: 24px;
   cursor: pointer;
   color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
 `;
